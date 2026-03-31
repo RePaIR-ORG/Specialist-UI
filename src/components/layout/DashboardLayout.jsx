@@ -8,14 +8,14 @@ export function DashboardLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-slate-50 dark:bg-gray-950 font-sans transition-colors overflow-hidden relative">
+    <div className="flex h-screen bg-background text-foreground font-sans transition-colors overflow-hidden relative">
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       <ThemeToggle />
       
       <main className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Mobile Header */}
-        <header className="md:hidden flex items-center justify-between p-4 bg-white/80 backdrop-blur-md dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shrink-0 shadow-sm z-30">
-          <h1 className="font-semibold text-gray-900 dark:text-gray-100">Specialist Dashboard</h1>
+        <header className="md:hidden flex items-center justify-between p-4 bg-card/80 backdrop-blur-md border-b border-border shrink-0 shadow-sm z-30">
+          <h1 className="font-semibold text-foreground">Specialist Dashboard</h1>
           <button 
             onClick={() => setIsSidebarOpen(true)}
             className="p-2 -mr-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
