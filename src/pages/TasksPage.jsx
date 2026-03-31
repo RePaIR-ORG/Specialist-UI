@@ -55,9 +55,9 @@ const StudentTaskCard = ({ student }) => {
     <Card className="h-full bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800 flex flex-col shadow-sm dark:shadow-none hover:shadow-md dark:hover:border-gray-700 transition-all">
       <CardHeader className="pb-3 border-b border-gray-100 dark:border-gray-800">
         <div className="flex items-center gap-4">
-          <Avatar className="h-12 w-12 border-2 border-blue-100 dark:border-blue-900/50">
+          <Avatar className="h-12 w-12 border-2 border-slate-100 dark:border-slate-900/50">
             <AvatarImage src={student.image} alt={student.name} />
-            <AvatarFallback className="bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">{student.name.charAt(0)}</AvatarFallback>
+            <AvatarFallback className="bg-slate-50 dark:bg-slate-900/20 text-slate-600 dark:text-slate-400">{student.name.charAt(0)}</AvatarFallback>
           </Avatar>
           <div className="flex-1">
             <CardTitle className="text-lg text-gray-900 dark:text-gray-100">{student.name}</CardTitle>
@@ -88,7 +88,7 @@ const StudentTaskCard = ({ student }) => {
           )}
         </div>
         <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800/60 text-center">
-          <Link to={`/students/${student.id}/tasks`} className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline font-medium">
+          <Link to={`/students/${student.id}/tasks`} className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-300 hover:underline font-medium">
             View all tasks
           </Link>
         </div>
@@ -142,7 +142,7 @@ export default function TasksPage() {
         
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="gap-2 bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700">
+            <Button className="gap-2  ">
               <Plus className="h-4 w-4" /> Add New Task
             </Button>
           </DialogTrigger>
@@ -193,12 +193,12 @@ export default function TasksPage() {
                   placeholder="Task details and instructions..."
                   value={newTaskDesc}
                   onChange={(e) => setNewTaskDesc(e.target.value)}
-                  className="col-span-3 flex min-h-[80px] w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm ring-offset-white dark:ring-offset-gray-900 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="col-span-3 flex min-h-[80px] w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm ring-offset-white dark:ring-offset-gray-900 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 />
               </div>
             </div>
             <DialogFooter>
-              <Button type="submit" onClick={handleAddTask} disabled={!newTaskTitle || !newTaskDesc || !selectedStudentId} className="bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700 disabled:bg-gray-300 dark:disabled:bg-gray-800 disabled:text-gray-500 dark:disabled:text-gray-500">
+              <Button type="submit" onClick={handleAddTask} disabled={!newTaskTitle || !newTaskDesc || !selectedStudentId} className="  ">
                 Assign Task
               </Button>
             </DialogFooter>

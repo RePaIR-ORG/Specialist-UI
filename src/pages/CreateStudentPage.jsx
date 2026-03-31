@@ -79,10 +79,10 @@ export function CreateStudentPage() {
       </header>
 
       <form onSubmit={handleSubmit} className="max-w-4xl max-w-full">
-        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm overflow-hidden">
+        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg shadow-gray-200/50 dark:shadow-none overflow-hidden transition-all duration-300">
           <CardHeader className="border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/50 pb-6">
             <CardTitle className="text-lg text-gray-900 dark:text-gray-100 flex items-center gap-2">
-              <User className="w-5 h-5 text-blue-500" /> General Information
+              <User className="w-5 h-5 text-slate-600 dark:text-slate-400" /> General Information
             </CardTitle>
             <CardDescription className="text-gray-500 dark:text-gray-400">
               Basic identification and medical details.
@@ -190,7 +190,7 @@ export function CreateStudentPage() {
                   id="notes" name="notes" rows="3"
                   value={formData.notes} onChange={handleChange}
                   placeholder="Any preliminary observations or history..."
-                  className="flex w-full rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+                  className="flex w-full rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                 ></textarea>
               </div>
             </div>
@@ -229,10 +229,10 @@ export function CreateStudentPage() {
           </div>
 
           <CardFooter className="p-6 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 flex items-center justify-end gap-3">
-            <Button type="button" variant="outline" onClick={() => navigate(-1)} className="border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">
+            <Button type="button" variant="outline" onClick={() => navigate(-1)} className="border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-slate-50 dark:hover:bg-gray-800 transition-colors">
               Cancel
             </Button>
-            <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button type="submit" className=" shadow-md shadow-primary/20 active:scale-[0.98] transition-all">
               Create Account
             </Button>
           </CardFooter>

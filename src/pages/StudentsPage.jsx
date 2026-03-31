@@ -61,7 +61,7 @@ export function StudentsPage() {
           </p>
         </div>
         <div className="shrink-0">
-          <Button onClick={() => navigate('/students/new')} className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto">
+          <Button onClick={() => navigate('/students/new')} className=" w-full sm:w-auto shadow-md shadow-primary/20 active:scale-[0.98] transition-all duration-200">
             <Plus className="w-4 h-4 mr-2" />
             Add Student
           </Button>
@@ -69,7 +69,7 @@ export function StudentsPage() {
       </header>
 
       {/* Filters Section */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-4 shadow-sm flex flex-col xl:flex-row gap-4">
+      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-4 shadow-md shadow-gray-200/50 dark:shadow-none flex flex-col xl:flex-row gap-4 transition-all duration-300">
         {/* Search Bar */}
         <div className="relative flex-1">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -129,7 +129,7 @@ export function StudentsPage() {
         </div>
       </div>
       
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-md shadow-gray-200/50 dark:shadow-none overflow-hidden transition-all duration-300">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[600px]">
             <thead>
@@ -149,7 +149,7 @@ export function StudentsPage() {
                     <td className="py-3 px-4 text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">{student.name}</td>
                     <td className="py-3 px-4 text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">{student.age}</td>
                     <td className="py-3 px-4 text-sm whitespace-nowrap">
-                      <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 ring-1 ring-inset ring-blue-700/10 dark:ring-blue-400/20">
+                      <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-slate-50 text-slate-700 dark:bg-slate-500/10 dark:text-slate-400 ring-1 ring-inset ring-slate-700/10 dark:ring-slate-400/20">
                         {student.diagnosis}
                       </span>
                     </td>

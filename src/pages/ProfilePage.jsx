@@ -48,7 +48,7 @@ export function ProfilePage() {
             />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{profile.name}</h2>
-          <Badge variant="secondary" className="mt-2 bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+          <Badge variant="secondary" className="mt-2 bg-slate-50 text-slate-700 dark:bg-slate-900/30 dark:text-slate-400">
             {profile.domain}
           </Badge>
 

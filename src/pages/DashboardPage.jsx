@@ -145,10 +145,10 @@ export function DashboardPage() {
 
       {/* Metrics Row */}
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-md shadow-gray-200/50 dark:shadow-none transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-500 dark:text-gray-400">Total Students</CardTitle>
-            <Users className="w-5 h-5 text-blue-500" />
+            <Users className="w-5 h-5 text-slate-500" />
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-bold text-gray-900 dark:text-gray-100">{metrics.totalStudents}</div>
@@ -156,7 +156,7 @@ export function DashboardPage() {
           </CardContent>
         </Card>
         
-        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-md shadow-gray-200/50 dark:shadow-none transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-500 dark:text-gray-400">Tasks Per Week (Avg)</CardTitle>
             <Activity className="w-5 h-5 text-purple-500" />
@@ -167,7 +167,7 @@ export function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-md shadow-gray-200/50 dark:shadow-none transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-500 dark:text-gray-400">Tasks Assigned Total</CardTitle>
             <CheckSquare className="w-5 h-5 text-amber-500" />
@@ -178,7 +178,7 @@ export function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+        <Card className="border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-md shadow-gray-200/50 dark:shadow-none transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-500 dark:text-gray-400">Tasks Completed</CardTitle>
             <CheckSquare className="w-5 h-5 text-green-500" />
@@ -192,7 +192,7 @@ export function DashboardPage() {
 
       <div className="grid gap-6 grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">
         {/* Calendar Section */}
-        <Card className="lg:col-span-2 xl:col-span-3 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm flex flex-col h-full">
+        <Card className="lg:col-span-2 xl:col-span-3 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-md shadow-gray-200/50 dark:shadow-none transition-all duration-300 flex flex-col h-full">
           <Dialog open={isEventModalOpen} onOpenChange={setIsEventModalOpen}>
             <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="w-full sm:w-auto flex items-start justify-between sm:block">
@@ -205,7 +205,7 @@ export function DashboardPage() {
                   </CardDescription>
                 </div>
                 <DialogTrigger asChild>
-                  <Button size="sm" className="h-8 w-8 p-0 bg-blue-600 hover:bg-blue-700 text-white sm:hidden mt-1 shrink-0 flex items-center justify-center">
+                  <Button size="sm" className="h-8 w-8 p-0  sm:hidden mt-1 shrink-0 flex items-center justify-center">
                     <CalendarIcon className="w-4 h-4" />
                   </Button>
                 </DialogTrigger>
@@ -230,7 +230,7 @@ export function DashboardPage() {
                     </button>
                   </div>
                   <DialogTrigger asChild>
-                    <Button size="sm" className="hidden sm:flex h-9 bg-blue-600 hover:bg-blue-700 text-white ml-2 gap-2">
+                    <Button size="sm" className="hidden sm:flex h-9  ml-2 gap-2">
                       <CalendarIcon className="w-4 h-4" /> 
                       <span className="hidden xl:inline">Add Event</span>
                       <span className="inline xl:hidden">Add</span>
@@ -295,7 +295,7 @@ export function DashboardPage() {
                     id="type"
                     value={newEvent.type}
                     onChange={(e) => setNewEvent({...newEvent, type: e.target.value})}
-                    className="flex h-10 w-full rounded-md border text-sm px-3 py-2 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex h-10 w-full rounded-md border text-sm px-3 py-2 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-slate-500"
                   >
                     <option value="Visit">Visit</option>
                     <option value="Observation">Observation</option>
@@ -307,7 +307,7 @@ export function DashboardPage() {
                   <Button type="button" variant="outline" onClick={() => setIsEventModalOpen(false)}>
                     Cancel
                   </Button>
-                  <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button type="submit" className="">
                     Save Event
                   </Button>
                 </DialogFooter>
@@ -335,11 +335,11 @@ export function DashboardPage() {
                     className={`
                       min-h-[80px] p-2 rounded-lg border flex flex-col items-center xl:items-start transition-colors
                       ${!isCurrentMonth ? 'bg-gray-50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-600 border-transparent dark:border-transparent' : 'bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 border-gray-100 dark:border-gray-800'}
-                      ${isTodayDay ? 'ring-2 ring-blue-500 border-transparent' : ''}
-                      hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-sm cursor-pointer
+                      ${isTodayDay ? 'ring-2 ring-slate-500 border-transparent' : ''}
+                      hover:border-slate-200 dark:hover:border-slate-800 hover:shadow-md hover:shadow-gray-200/50 dark:hover:shadow-none cursor-pointer
                     `}
                   >
-                    <span className={`text-sm font-medium mb-1 ${isTodayDay ? 'bg-blue-500 text-white w-7 h-7 flex items-center justify-center rounded-full' : ''}`}>
+                    <span className={`text-sm font-medium mb-1 ${isTodayDay ? 'bg-slate-500 text-white w-7 h-7 flex items-center justify-center rounded-full' : ''}`}>
                       {format(day, 'd')}
                     </span>
                     <div className="w-full space-y-1 mt-1">
@@ -347,7 +347,7 @@ export function DashboardPage() {
                         <div 
                           key={event.id} 
                           title={event.title}
-                          className="text-[10px] xl:text-xs truncate w-full bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-1.5 py-1 rounded"
+                          className="text-[10px] xl:text-xs truncate w-full bg-slate-50 dark:bg-slate-900/40 text-slate-700 dark:text-slate-300 px-1.5 py-1 rounded"
                         >
                           <span className="hidden xl:inline">{event.time.split(' - ')[0]} </span>
                           <span className="font-semibold xl:font-normal">{event.title}</span>
@@ -362,7 +362,7 @@ export function DashboardPage() {
         </Card>
 
         {/* Upcoming Visits List (Agenda) */}
-        <Card className="lg:col-span-1 border-gray-200 dark:border-gray-800 border bg-white dark:bg-gray-900 shadow-sm flex flex-col h-full">
+        <Card className="lg:col-span-1 border-gray-200 dark:border-gray-800 border bg-white dark:bg-gray-900 shadow-md shadow-gray-200/50 dark:shadow-none transition-all duration-300 flex flex-col h-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
               <CalendarIcon className="w-5 h-5 text-gray-500" />
@@ -373,7 +373,7 @@ export function DashboardPage() {
           <CardContent className="flex-1 overflow-auto space-y-4">
             {events.length > 0 ? (
               events.sort((a,b) => a.date - b.date).map(event => (
-                <div key={event.id} className="p-3 border border-gray-100 dark:border-gray-800 rounded-lg group hover:border-blue-100 dark:hover:border-blue-900 transition-colors">
+                <div key={event.id} className="p-3 border border-gray-100 dark:border-gray-800 rounded-lg group hover:border-slate-100 dark:hover:border-slate-900 transition-colors">
                   <div className="flex items-start justify-between">
                     <h4 className="font-semibold text-sm text-gray-900 dark:text-gray-100 line-clamp-1">{event.title}</h4>
                   </div>

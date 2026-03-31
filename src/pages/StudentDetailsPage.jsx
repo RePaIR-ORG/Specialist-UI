@@ -95,7 +95,7 @@ export function StudentDetailsPage() {
         </p>
         <NavLink
           to="/students"
-          className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+          className="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 text-sm font-medium shadow"
         >
           <ArrowLeft className="mr-2 h-4 w-4" /> Go Back to Students
         </NavLink>
@@ -166,7 +166,7 @@ export function StudentDetailsPage() {
             <p className="text-gray-500 dark:text-gray-400 font-medium">Age: {student.age} yrs</p>
             
             <div className="mt-4 flex flex-wrap justify-center gap-2">
-              <Badge variant="secondary" className="bg-blue-50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 font-medium tracking-wide">
+              <Badge variant="secondary" className="bg-slate-50 text-slate-700 dark:bg-slate-500/10 dark:text-slate-400 font-medium tracking-wide">
                 {student.diagnosis}
               </Badge>
               <Badge variant="outline" className={`${student.support_level === 'High' ? 'border-red-200 text-red-700 bg-red-50 dark:border-red-900 dark:text-red-400 dark:bg-red-500/10' : student.support_level === 'Medium' ? 'border-orange-200 text-orange-700 bg-orange-50 dark:border-orange-900 dark:text-orange-400 dark:bg-orange-500/10' : 'border-green-200 text-green-700 bg-green-50 dark:border-green-900 dark:text-green-400 dark:bg-green-500/10'}`}>

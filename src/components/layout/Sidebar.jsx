@@ -38,14 +38,14 @@ export function Sidebar({ isOpen, setIsOpen }) {
           onClick={() => setIsOpen(false)}
           className="p-8 pb-6 flex flex-col items-center border-b border-gray-100 dark:border-gray-800 md:pt-8 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group cursor-pointer"
         >
-          <div className="w-24 h-24 rounded-full border-4 border-white dark:border-gray-800 shadow-sm overflow-hidden mb-4 ring-1 ring-gray-200 dark:ring-gray-700 group-hover:ring-blue-400 dark:group-hover:ring-blue-500 transition-all duration-300">
+          <div className="w-24 h-24 rounded-full border-4 border-white dark:border-gray-800 shadow-sm overflow-hidden mb-4 ring-1 ring-gray-200 dark:ring-gray-700 group-hover:ring-slate-400 dark:group-hover:ring-slate-500 transition-all duration-300">
             <img
               src="https://api.dicebear.com/7.x/avataaars/svg?seed=Teacher"
               alt="User profile"
               className="w-full h-full object-cover bg-gray-50 dark:bg-gray-800"
             />
           </div>
-          <h2 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Alex Johnson</h2>
+          <h2 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">Alex Johnson</h2>
           <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-0.5">Special Educator</p>
         </NavLink>
         
@@ -61,7 +61,7 @@ export function Sidebar({ isOpen, setIsOpen }) {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? "bg-gray-100 dark:bg-gray-800/80 text-gray-900 dark:text-gray-100"
+                      ? "bg-slate-100 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 ring-1 ring-slate-200 dark:ring-slate-700"
                       : "text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 hover:text-gray-900 dark:hover:text-gray-100"
                   }`
                 }

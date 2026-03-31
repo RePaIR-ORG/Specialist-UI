@@ -118,7 +118,7 @@ export function StudentTasksPage() {
         </p>
         <NavLink
           to="/tasks"
-          className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow hover:bg-gray-800 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90"
+          className="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 text-sm font-medium shadow transition-colors"
         >
           <ArrowLeft className="mr-2 h-4 w-4" /> Go Back
         </NavLink>
@@ -148,7 +148,7 @@ export function StudentTasksPage() {
         
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="gap-2 bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700">
+            <Button className="gap-2  ">
               <Plus className="h-4 w-4" /> Add New Task
             </Button>
           </DialogTrigger>
@@ -181,12 +181,12 @@ export function StudentTasksPage() {
                   placeholder="Task details and instructions..."
                   value={newTaskDesc}
                   onChange={(e) => setNewTaskDesc(e.target.value)}
-                  className="col-span-3 flex min-h-[80px] w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm ring-offset-white dark:ring-offset-gray-900 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="col-span-3 flex min-h-[80px] w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm ring-offset-white dark:ring-offset-gray-900 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 />
               </div>
             </div>
             <DialogFooter>
-              <Button type="submit" onClick={handleAddTask} disabled={!newTaskTitle || !newTaskDesc} className="bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700 disabled:bg-gray-300 dark:disabled:bg-gray-800 disabled:text-gray-500 dark:disabled:text-gray-500">
+              <Button type="submit" onClick={handleAddTask} disabled={!newTaskTitle || !newTaskDesc} className="  ">
                 Assign Task
               </Button>
             </DialogFooter>
@@ -205,7 +205,7 @@ export function StudentTasksPage() {
               <Badge 
                 key={f}
                 variant={filter === f ? "default" : "outline"}
-                className={`cursor-pointer ${filter === f ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700'}`}
+                className={`cursor-pointer ${filter === f ? '' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700'}`}
                 onClick={() => setFilter(f)}
               >
                 {f}
@@ -224,7 +224,7 @@ export function StudentTasksPage() {
             <div className="text-center py-12 border border-dashed border-gray-200 dark:border-gray-800 rounded-lg bg-gray-50 dark:bg-gray-900/30">
               <Clock className="mx-auto h-8 w-8 text-gray-400 mb-3" />
               <p className="text-gray-500 dark:text-gray-400 font-medium">No tasks found for "{filter}" status</p>
-              <Button variant="link" className="mt-2 text-blue-600 dark:text-blue-400" onClick={() => setFilter("All")}>
+              <Button variant="link" className="mt-2 text-slate-600 dark:text-slate-400" onClick={() => setFilter("All")}>
                 Clear filters
               </Button>
             </div>

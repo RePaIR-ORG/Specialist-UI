@@ -2,17 +2,19 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { Sidebar } from "./Sidebar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function DashboardLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-950 font-sans transition-colors overflow-hidden">
+    <div className="flex h-screen bg-slate-50 dark:bg-gray-950 font-sans transition-colors overflow-hidden relative">
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+      <ThemeToggle />
       
       <main className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Mobile Header */}
-        <header className="md:hidden flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shrink-0">
+        <header className="md:hidden flex items-center justify-between p-4 bg-white/80 backdrop-blur-md dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shrink-0 shadow-sm z-30">
           <h1 className="font-semibold text-gray-900 dark:text-gray-100">Specialist Dashboard</h1>
           <button 
             onClick={() => setIsSidebarOpen(true)}
