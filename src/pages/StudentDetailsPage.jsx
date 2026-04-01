@@ -171,9 +171,13 @@ export function StudentDetailsPage() {
                 </h4>
                 <div className="flex flex-col gap-2">
                   {student.assigned_specialists.map(sp => (
-                    <div key={sp} className="text-sm text-foreground bg-muted/80 p-2 rounded-md border border-border/50">
+                    <NavLink 
+                      key={sp} 
+                      to={`/specialists/${encodeURIComponent(sp)}`}
+                      className="text-sm font-semibold text-green-600 dark:text-green-400 bg-muted/80 p-2 rounded-md border border-border/50 hover:bg-green-50 dark:hover:bg-green-900/20 hover:border-green-200 dark:hover:border-green-800 transition-colors w-full text-left inline-block"
+                    >
                       {sp}
-                    </div>
+                    </NavLink>
                   ))}
                 </div>
               </div>

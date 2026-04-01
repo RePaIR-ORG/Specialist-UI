@@ -9,6 +9,9 @@ import { StudentTasksPage } from "@/pages/StudentTasksPage";
 import TasksPage from "@/pages/TasksPage";
 import { ProfilePage } from "@/pages/ProfilePage";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LandingPage } from "@/pages/LandingPage";
+import { SignInPage } from "@/pages/SignInPage";
+import { SignUpPage } from "@/pages/SignUpPage";
 import "./App.css";
 
 // --- Dummy Pages ---
@@ -42,17 +45,20 @@ export default function App() {
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <Router>
         <Routes>
-          <Route path="/" element={<DashboardLayout />}>
-            <Route index element={<Navigate to="/dashboard" replace />} />
-            <Route path="dashboard" element={<DashboardPage />} />
-            <Route path="students" element={<StudentsPage />} />
-            <Route path="students/new" element={<CreateStudentPage />} />
-            <Route path="students/:id" element={<StudentDetailsPage />} />
-            <Route path="students/:id/tasks" element={<StudentTasksPage />} />
-            <Route path="tasks" element={<TasksPage />} />
-            <Route path="profile" element={<ProfilePage />} />
-            <Route path="assessment" element={<PagePlaceholder title="Assessment" />} />
-            <Route path="settings" element={<PagePlaceholder title="Settings" />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<SignInPage />} />
+          <Route path="/register" element={<SignUpPage />} />
+          <Route element={<DashboardLayout />}>
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/students" element={<StudentsPage />} />
+            <Route path="/students/new" element={<CreateStudentPage />} />
+            <Route path="/students/:id" element={<StudentDetailsPage />} />
+            <Route path="/students/:id/tasks" element={<StudentTasksPage />} />
+            <Route path="/tasks" element={<TasksPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/specialists/:name" element={<ProfilePage />} />
+            <Route path="/assessment" element={<PagePlaceholder title="Assessment" />} />
+            <Route path="/settings" element={<PagePlaceholder title="Settings" />} />
           </Route>
         </Routes>
       </Router>
