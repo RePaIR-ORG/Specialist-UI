@@ -50,8 +50,8 @@ function OtherRequestForm({ onClose }) {
     </div>
   );
 
-  const Field = ({ label, icon: Icon, field, type = "text", placeholder, rows }) => (
-    <div>
+  const renderField = ({ label, icon: Icon, field, type = "text", placeholder, rows }) => (
+    <div key={field}>
       <label className="block text-sm font-medium text-foreground mb-1.5">
         {label} <span className="text-destructive">*</span>
       </label>
@@ -67,10 +67,10 @@ function OtherRequestForm({ onClose }) {
 
   return (
     <form onSubmit={e => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
-      <Field label={t("assessment.form.institution")} icon={Building2} field="institution" placeholder={t("assessment.form.institutionPlaceholder")} />
-      <Field label={t("assessment.form.specialist")}   icon={User}       field="specialist"  placeholder={t("assessment.form.specialistPlaceholder")} />
-      <Field label={t("assessment.form.assessmentTool")} icon={ClipboardList} field="assessment" placeholder={t("assessment.form.assessmentToolPlaceholder")} />
-      <Field label={t("assessment.form.notes")}        icon={FileText}   field="notes"       placeholder={t("assessment.form.notesPlaceholder")} rows={3} />
+      {renderField({ label: t("assessment.form.institution"), icon: Building2, field: "institution", placeholder: t("assessment.form.institutionPlaceholder") })}
+      {renderField({ label: t("assessment.form.specialist"), icon: User, field: "specialist", placeholder: t("assessment.form.specialistPlaceholder") })}
+      {renderField({ label: t("assessment.form.assessmentTool"), icon: ClipboardList, field: "assessment", placeholder: t("assessment.form.assessmentToolPlaceholder") })}
+      {renderField({ label: t("assessment.form.notes"), icon: FileText, field: "notes", placeholder: t("assessment.form.notesPlaceholder"), rows: 3 })}
       <div className="flex justify-end gap-3 pt-2">
         <button type="button" onClick={onClose} className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-foreground hover:bg-muted transition-colors">
           {t("common.cancel")}
